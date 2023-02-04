@@ -22,11 +22,11 @@ export class Note {
   get ActiveNoteTemplate() {
     return `
     <div class="col-7 m-auto bg-info text-light rounded border border-dark">
-    <h1>Title</h1>
+    <h1>${this.title}</h1>
     <div class="mb-3 d-flex justify-content-between">
     </div>
-    <h3>Date</h3>
-    <textarea name="body" id="🗒️">body...</textarea>
+    <h3>${this.date}</h3>
+    <textarea name="body" id="🗒️">${this.body}</textarea>
   </div>
   <div class="d-flex justify-content-end">
     <button class="btn btn-success">Save</button>

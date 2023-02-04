@@ -14,10 +14,10 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Note').Note[]} */
   notes = [
     new Note(
-      {
-        title: 'test',
-        body: 'Hello'
-      }
+      // {
+      //   title: 'test',
+      //   body: 'Hello'
+      // }
     ),
   ]
 }
