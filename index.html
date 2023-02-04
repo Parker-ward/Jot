@@ -28,9 +28,16 @@
           <div class="card mt-2">
             <div class="card body" style="height: 20rem;">
               <h1 class="p-2">Notes</h1>
+              <div id="notes">
+                <!-- STUB NoteTemplate notes will show up here -->
+                <!-- <span>HTML</span>
+                <span>JavaScript</span>
+                <span>Style.css</span> -->
+              </div>
             </div>
           </div>
           <!-- NOTE Form is here -->
+
           <form>
             <div class="mb-3">
               <label for="Title" class="form-label">Title</label>
@@ -41,9 +48,17 @@
               title="Choose your color">
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
+
+
           <!-- NOTE Form ends here -->
         </div>
-        <div class="col-md-9 mt-2">
+
+
+
+
+        <!-- STUB this is our active note template -->
+        <!-- REVIEW for placing, look for the first div... this is my 'parent' -->
+        <div class="col-md-9 mt-2" id="activeNote">
           <div class="col-7 m-auto bg-info text-light rounded border border-dark">
             <h1>Title</h1>
             <div class="mb-3 d-flex justify-content-between">
@@ -54,6 +69,7 @@
           <div class="d-flex justify-content-end">
             <button class="btn btn-success">Save</button>
           </div>
+
         </div>
       </div>
 
