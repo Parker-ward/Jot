@@ -17,7 +17,7 @@ class NotesService {
   updateNote(updatedBody) {
     let activeNote = appState.activeNote
     activeNote.body = updatedBody
-    activeNote.unlocked = false
+    // activeNote.unlocked = false
     saveState('note', appState.notes)
     appState.emit('activeNote')
   }
