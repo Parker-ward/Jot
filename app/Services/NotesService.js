@@ -3,6 +3,13 @@ import { Note } from "../Models/Note.js";
 import { saveState } from "../Utils/Store.js";
 class NotesService {
 
+  updateNote(updatedBody) {
+    let activeNote = appState.activeNote
+    activeNote.body = updatedBody
+    // activeNote.unlocked = false
+    saveState('note', appState.notes)
+    appState.emit('activeNote')
+  }
   setActiveNote(noteId) {
     let foundNote = appState.notes.find(n => n.id == noteId)
     console.log(foundNote);
@@ -11,18 +18,6 @@ class NotesService {
     // TODO find the note in the appstate using the noteId (from the array)
     // TODO after finding the note, save it to the appstate activeNote
   }
-
-
-
-  updateNote(updatedBody) {
-    let activeNote = appState.activeNote
-    activeNote.body = updatedBody
-    // activeNote.unlocked = false
-    saveState('note', appState.notes)
-    appState.emit('activeNote')
-  }
-
-
 
 
   createNote(FormData) {

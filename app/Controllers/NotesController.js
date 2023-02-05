@@ -47,34 +47,34 @@ export class NotesController {
       console.error(error);
     }
 
-    // setActiveNote(noteId) {
-    //   try {
-    //     notesService.setActiveNote(noteId)
-    //   } catch (error) {
-    //     console.error(error)
-    //     Pop.error(error.message)
-
-    //   }
-    // TODO call function in service that sets the note in the appstate
-    // TODO pass the noteId down to the service
-    // console.log(noteId);
-    // NOTE here I am calling the set active fn in the service
-    // notesService.setActiveNote(noteId)
+    setActiveNote(noteId)
+    try {
+      notesService.setActiveNote(noteId)
+    } catch (error) {
+      console.error(error)
+      Pop.error(error.message)
+    }
   }
 
-  // updateNote() {
-  //   try {
-  //     let textarea = document.getElementById('🗒️')
-  //     // @ts-ignore
-  //     let updatedBody = textarea.value
-  //     console.log('blurred', updatedBody);
-  //     notesService.updateNote(updatedBody)
-  //   } catch (error) {
-  //     console.error(error);
-  //     Pop.error(error.message)
+  // TODO call function in service that sets the note in the appstate
+  // TODO pass the noteId down to the service
+  // console.log(noteId);
+  // NOTE here I am calling the set active fn in the service
+  // notesService.setActiveNote(noteId)
 
-  //   }
-  // }
+  updateNote() {
+    try {
+      let textarea = document.getElementById('🗒️')
+      // @ts-ignore
+      let updatedBody = textarea.value
+      console.log('blurred', updatedBody);
+      notesService.updateNote(updatedBody)
+    } catch (error) {
+      console.error(error);
+      Pop.error(error.message)
 
-
+    }
+  }
 }
+
+
