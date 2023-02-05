@@ -38,10 +38,10 @@
           </div>
           <!-- NOTE Form is here -->
 
-          <form>
+          <form onsubmit="app.notesController.createNote()">
             <div class="mb-3">
               <label for="Title" class="form-label">Title</label>
-              <input type="Title" class="form-control bg-white" id="" aria-describedby="emailHelp">
+              <input type="text" class="form-control bg-white" id="noteTitle" aria-describedby="emailHelp">
             </div>
             <label for="exampleColorInput" class="form-label">Color picker</label>
             <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c"

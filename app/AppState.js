@@ -1,4 +1,3 @@
-import { Note } from "./Models/Note.js"
 import { Value } from "./Models/Value.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
@@ -13,12 +12,12 @@ class AppState extends EventEmitter {
 
   /** @type {import('./Models/Note').Note[]} */
   notes = [
-    new Note(
-      // {
-      //   title: 'test',
-      //   body: 'Hello'
-      // }
-    ),
+    // new Note(
+    //   {
+    //     title: 'test',
+    //     body: 'Hello'
+    //   }
+    // ),
   ]
 }
 

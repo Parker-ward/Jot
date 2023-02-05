@@ -1,8 +1,8 @@
 import { appState } from "../AppState.js";
 import { notesService } from "../Services/NotesService.js";
+import { getFormData } from "../Utils/FormHandler.js";
 import { Pop } from "../Utils/Pop.js";
 import { setHTML } from "../Utils/Writer.js";
-
 
 
 
@@ -32,49 +32,49 @@ export class NotesController {
     appState.on('activeNote', _drawNote)
   }
 
-  // createNote() {
-  //   try {
-  //     // NOTE don't refresh the page!
-  //     window.event.preventDefault()
-  //     const form = window.event.target
-  //     const formData = FormData(form)
-  //     console.log(formData);
-  //     notesService.createNote(formData)
-  //     // @ts-ignore
-  //     form.reset()
-  //   } catch (error) {
-  //     Pop.error(error.message)
-  //     console.error(error);
-  //   }
-
-  setActiveNote(noteId) {
+  createNote() {
     try {
-      notesService.setActiveNote(noteId)
+      // NOTE don't refresh the page!
+      window.event.preventDefault()
+      const form = window.event.target
+      const formData = getFormData(form)
+      console.log(formData);
+      notesService.createNote(formData)
+      // @ts-ignore
+      form.reset()
     } catch (error) {
-      console.error(error)
       Pop.error(error.message)
-
+      console.error(error);
     }
+
+    // setActiveNote(noteId) {
+    //   try {
+    //     notesService.setActiveNote(noteId)
+    //   } catch (error) {
+    //     console.error(error)
+    //     Pop.error(error.message)
+
+    //   }
     // TODO call function in service that sets the note in the appstate
     // TODO pass the noteId down to the service
-    console.log(noteId);
+    // console.log(noteId);
     // NOTE here I am calling the set active fn in the service
-    notesService.setActiveNote(noteId)
+    // notesService.setActiveNote(noteId)
   }
 
-  updateNote() {
-    try {
-      let textarea = document.getElementById('🗒️')
-      // @ts-ignore
-      let updatedBody = textarea.value
-      console.log('blurred', updatedBody);
-      notesService.updateNote(updatedBody)
-    } catch (error) {
-      console.error(error);
-      Pop.error(error.message)
+  // updateNote() {
+  //   try {
+  //     let textarea = document.getElementById('🗒️')
+  //     // @ts-ignore
+  //     let updatedBody = textarea.value
+  //     console.log('blurred', updatedBody);
+  //     notesService.updateNote(updatedBody)
+  //   } catch (error) {
+  //     console.error(error);
+  //     Pop.error(error.message)
 
-    }
-  }
+  //   }
+  // }
 
 
 }
