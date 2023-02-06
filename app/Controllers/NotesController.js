@@ -66,7 +66,6 @@ export class NotesController {
   // notesService.setActiveNote(noteId)
 
   updateNote(noteId) {
-    debugger
     try {
       let textarea = document.getElementById('body')
       // @ts-ignore

@@ -36,7 +36,7 @@ class NotesService {
 
     appState.notes.splice(notesIndex, 1)
     saveState('notes', appState.notes)
-    appState.activeNote = null
+    // appState.activeNote = null
     appState.emit('notes')
 
 

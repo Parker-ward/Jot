@@ -14,8 +14,7 @@ export class Note {
   get NoteTemplate() {
     return `
     <div>
-    
-    <span onclick="app.notesController.setActiveNote('${this.id}')">${this.title}</span>
+    <span class="text-${this.color}" onclick="app.notesController.setActiveNote('${this.id}')">${this.title}</span>
       </div>
     
     `
@@ -24,9 +23,8 @@ export class Note {
   // TODO put in our active note template
   get ActiveNoteTemplate() {
     return `
-    <div class="col-7 m-auto bg-info text-light rounded border border-dark">
+    <div class="col-7 m-auto bg-info text-light rounded border border-${this.color}">
     <h1>${this.title}</h1>
-    
     <div class="mb-3 d-flex justify-content-between">
     </div>
     <h3>${this.date}</h3>
