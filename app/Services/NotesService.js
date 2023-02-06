@@ -32,11 +32,13 @@ class NotesService {
   }
 
   deletenote(noteId) {
-    let notesIndex = appState.notes.find(n => n.id == noteId)
+    let notesIndex = appState.notes.findIndex(n => n.id == noteId)
 
-    if (notesIndex) {
-      throw new Error('Bad Note')
-    }
+    appState.notes.splice(notesIndex, 1)
+    saveState('notes', appState.notes)
+    appState.activeNote = null
+    appState.emit('notes')
+
 
   }
 }

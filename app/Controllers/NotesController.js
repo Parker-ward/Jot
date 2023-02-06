@@ -55,15 +55,20 @@ export class NotesController {
     }
   }
 
+  setNoteCount() {
+    return appState.notes.length;
+  }
+
   // TODO call function in service that sets the note in the appstate
   // TODO pass the noteId down to the service
   // console.log(noteId);
   // NOTE here I am calling the set active fn in the service
   // notesService.setActiveNote(noteId)
 
-  updateNote() {
+  updateNote(noteId) {
+    debugger
     try {
-      let textarea = document.getElementById('🗒️')
+      let textarea = document.getElementById('body')
       // @ts-ignore
       let updatedBody = textarea.value
       console.log('blurred', updatedBody);
@@ -76,6 +81,7 @@ export class NotesController {
   }
 
   async deleteNote(noteId) {
+
     try {
       const yes = await Pop.confirm('Are you sure?')
       if (!yes) { return } // full stop

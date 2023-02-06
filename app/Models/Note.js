@@ -3,7 +3,7 @@ import { generateId } from "../Utils/generateId.js"
 
 export class Note {
   constructor(data) {
-    this.id = generateId() || this.date
+    this.id = generateId()
     this.title = data.title
     this.body = data.body || ''
     this.color = data.noteColor
@@ -31,10 +31,10 @@ export class Note {
     </div>
     <h3>${this.date}</h3>
     <h3>${this.time}</h3>
-    <textarea name="body" id="🗒️" onblur="app.notesController.updateNote()">${this.body}</textarea>
+    <textarea name="body" id="body" for="body" onblur="app.notesController.updateNote('${this.id}')">${this.body}</textarea>
   </div>
   <div>
-  <button class="btn btn-danger" onclick="app.notesController.deletenote('${this.id}')">DELETE NOTE</button>
+  <button class="btn btn-danger" id="${this.id}" onclick="app.notesController.deleteNote('${this.id}')">DELETE NOTE</button>
 </div>
   <div class="d-flex justify-content-end">
     <button class="btn btn-success">Save</button>
