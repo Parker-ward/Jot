@@ -24,7 +24,8 @@ class NotesService {
     let newNote = new Note(formData)
     console.log(newNote);
     appState.notes.push(newNote)
-    saveState('note', appState.notes)
+    console.log('Notes State: ', appState.notes)
+    saveState('notes', appState.notes)
     appState.emit('note')
   }
 }

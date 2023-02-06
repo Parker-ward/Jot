@@ -1,20 +1,20 @@
 import { generateId } from "../Utils/generateId.js"
 
 
+
 export class Note {
   constructor(data) {
-    this.id = generateId() || data.id
+    this.id = generateId() || this.date
     this.title = data.title
     this.body = data.body || ''
+    this.color = data.color
     this.date = data.date || new Date().toLocaleDateString('en-Us')
   }
 
   get NoteTemplate() {
     return `
-    <div>
-    <span onclick="app.notesController.setActiveNote('${this.id}')"></span>
-    <span>${this.title}</span>
-    </div>
+    <span onclick="app.notesController.setActiveNote('${this.id}')">${this.title}</span>
+    
     `
   }
 
@@ -26,7 +26,7 @@ export class Note {
     <div class="mb-3 d-flex justify-content-between">
     </div>
     <h3>${this.date}</h3>
-    <textarea name="body" id="🗒️">${this.body} onblur="app.notesController.updateNote()"</textarea>
+    <textarea name="body" id="🗒️">${this.body}</textarea>
   </div>
   <div class="d-flex justify-content-end">
     <button class="btn btn-success">Save</button>
@@ -34,7 +34,6 @@ export class Note {
     `
   }
 }
-
 
 /* <form>
   <div class="mb-3">

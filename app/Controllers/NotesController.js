@@ -31,7 +31,6 @@ export class NotesController {
   }
 
   createNote() {
-    // debugger
     try {
       // NOTE don't refresh the page!
       window.event.preventDefault()

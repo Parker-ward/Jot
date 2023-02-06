@@ -29,6 +29,7 @@
             <div class="card body" style="height: 20rem;">
               <h1 class="p-2">Notes</h1>
               <div id="notes">
+
                 <!-- STUB NoteTemplate notes will show up here -->
                 <!-- <span>HTML</span>
                 <span>JavaScript</span>
@@ -40,11 +41,11 @@
 
           <form onsubmit="app.notesController.createNote()">
             <div class="mb-3">
-              <label for="noteTitle" class="form-label">Title</label>
-              <input type="text" class="form-control bg-white" name="noteTitle" id="noteTitle">
+              <label for="title" class="form-label">Title</label>
+              <input type="text" class="form-control bg-white" name="title" id="title">
             </div>
-            <label for="exampleColorInput" class="form-label">Color picker</label>
-            <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c"
+            <label for="noteColor" class="form-label">Color picker</label>
+            <input type="color" class="form-control form-control-color" name="noteColor" id="noteColor" value="#563d7c"
               title="Choose your color">
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
