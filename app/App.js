@@ -1,7 +1,6 @@
 import { NotesController } from "./Controllers/NotesController.js";
-
 class App {
-  // valuesController = new ValuesController();
+  // valuesController = new this.valuesController();
   notesController = new NotesController()
 }
 

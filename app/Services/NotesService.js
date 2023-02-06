@@ -3,6 +3,8 @@ import { Note } from "../Models/Note.js";
 import { saveState } from "../Utils/Store.js";
 class NotesService {
 
+
+
   updateNote(updatedBody) {
     let activeNote = appState.activeNote
     activeNote.body = updatedBody
@@ -27,6 +29,15 @@ class NotesService {
     console.log('Notes State: ', appState.notes)
     saveState('notes', appState.notes)
     appState.emit('note')
+  }
+
+  deletenote(noteId) {
+    let notesIndex = appState.notes.find(n => n.id == noteId)
+
+    if (notesIndex) {
+      throw new Error('Bad Note')
+    }
+
   }
 }
 

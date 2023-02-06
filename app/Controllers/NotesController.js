@@ -17,7 +17,7 @@ function _drawNotes() {
 
 function _drawNote() {
   let note = appState.activeNote
-  setHTML('activenote', note.ActiveNoteTemplate)
+  setHTML('activeNote', note.ActiveNoteTemplate)
 }
 
 export class NotesController {
@@ -65,7 +65,7 @@ export class NotesController {
     try {
       let textarea = document.getElementById('🗒️')
       // @ts-ignore
-      let updatedBody = textArea.value
+      let updatedBody = textarea.value
       console.log('blurred', updatedBody);
       notesService.updateNote(updatedBody)
     } catch (error) {
@@ -74,6 +74,18 @@ export class NotesController {
 
     }
   }
+
+  async deleteNote(noteId) {
+    try {
+      const yes = await Pop.confirm('Are you sure?')
+      if (!yes) { return } // full stop
+
+      notesService.deletenote(noteId)
+    } catch (error) {
+      Pop.error(error)
+    }
+  }
+
 }
 
 
