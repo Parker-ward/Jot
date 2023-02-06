@@ -1,9 +1,6 @@
 import { generateId } from "../Utils/generateId.js"
 
 
-
-
-
 export class Note {
   constructor(data) {
     this.id = generateId() || data.id
@@ -14,8 +11,9 @@ export class Note {
 
   get NoteTemplate() {
     return `
-    <span onclick="app.notesController.setActiveNote('${this.id}')">${this.title}</span>
-    
+    <div onclick="app.notesController.setActiveNote('${this.id}')">
+    <span>${this.title}</span>
+    </div>
     `
   }
 
