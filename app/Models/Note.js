@@ -11,7 +11,8 @@ export class Note {
 
   get NoteTemplate() {
     return `
-    <div onclick="app.notesController.setActiveNote('${this.id}')">
+    <div>
+    <span onclick="app.notesController.setActiveNote('${this.id}')"></span>
     <span>${this.title}</span>
     </div>
     `

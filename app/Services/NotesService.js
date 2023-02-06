@@ -20,8 +20,8 @@ class NotesService {
   }
 
 
-  createNote(FormData) {
-    let newNote = new Note(FormData)
+  createNote(formData) {
+    let newNote = new Note(formData)
     console.log(newNote);
     appState.notes.push(newNote)
     saveState('note', appState.notes)

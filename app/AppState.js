@@ -14,14 +14,14 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Note').Note|null} */
   activeNote = null
 
-  notes = [
-    new Note(
-      {
-        title: 'test',
-        body: 'Hello'
-      }
-    ),
-  ]
+  // notes = [
+  //   new Note(
+  //     {
+  //       title: 'test',
+  //       body: 'Hello'
+  //     }
+  //   ),
+  // ]
 }
 
 export const appState = new Proxy(new AppState(), {

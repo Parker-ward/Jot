@@ -17,7 +17,7 @@ function _drawNotes() {
 
 function _drawNote() {
   let note = appState.activeNote
-  setHTML('activeNote', note.ActiveNoteTemplate)
+  setHTML('activenote', note.ActiveNoteTemplate)
 }
 
 export class NotesController {
@@ -31,6 +31,7 @@ export class NotesController {
   }
 
   createNote() {
+    // debugger
     try {
       // NOTE don't refresh the page!
       window.event.preventDefault()
@@ -65,7 +66,7 @@ export class NotesController {
     try {
       let textarea = document.getElementById('🗒️')
       // @ts-ignore
-      let updatedBody = textarea.value
+      let updatedBody = textArea.value
       console.log('blurred', updatedBody);
       notesService.updateNote(updatedBody)
     } catch (error) {
