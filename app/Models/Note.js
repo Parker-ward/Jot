@@ -7,7 +7,7 @@ export class Note {
     this.id = generateId() || this.date
     this.title = data.title
     this.body = data.body || ''
-    this.color = data.color
+    this.color = data.noteColor
     this.date = data.date || new Date().toLocaleDateString('en-Us')
   }
 
@@ -23,6 +23,7 @@ export class Note {
     return `
     <div class="col-7 m-auto bg-info text-light rounded border border-dark">
     <h1>${this.title}</h1>
+    
     <div class="mb-3 d-flex justify-content-between">
     </div>
     <h3>${this.date}</h3>
