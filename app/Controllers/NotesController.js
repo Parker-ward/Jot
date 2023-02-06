@@ -8,11 +8,9 @@ import { setHTML } from "../Utils/Writer.js";
 
 function _drawNotes() {
   let notes = appState.notes
-  console.log(notes);
+  // console.log(notes);
   let template = ''
-  notes.forEach(note => {
-    template += note.NoteTemplate
-  });
+  notes.forEach(note => template += note.NoteTemplate)
   setHTML('notes', template)
   // console.log(template);
 }
@@ -24,7 +22,7 @@ function _drawNote() {
 
 export class NotesController {
   constructor() {
-    console.log('hello from the notes controller');
+    // console.log('hello from the notes controller');
     _drawNotes()
     // _drawNote()
     // TODO listen to the active note, and when it changes call the _drawNote fn
@@ -46,8 +44,9 @@ export class NotesController {
       Pop.error(error.message)
       console.error(error);
     }
+  }
 
-    setActiveNote(noteId)
+  setActiveNote(noteId) {
     try {
       notesService.setActiveNote(noteId)
     } catch (error) {
