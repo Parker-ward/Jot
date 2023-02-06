@@ -6,15 +6,18 @@ export class Note {
     this.id = generateId()
     this.title = data.title
     this.body = data.body || ''
-    this.color = data.noteColor
+    this.noteColor = data.noteColor // ?
+    // FIXME need to include an updated timestamp as well
+    // FIXME if you keep the timestamps as just Date, you can format them later.
     this.date = data.date || new Date().toLocaleDateString('en-Us')
     this.time = data.time || new Date().toLocaleTimeString()
+    this.updatedTime = data.updatedTime || Date.now()
   }
 
   get NoteTemplate() {
     return `
     <div>
-    <span class="text-${this.color}" onclick="app.notesController.setActiveNote('${this.id}')">${this.title}</span>
+    <span class="text-${this.noteColor}" onclick="app.notesController.setActiveNote('${this.id}')">${this.title}</span>
       </div>
     
     `
@@ -22,13 +25,16 @@ export class Note {
 
   // TODO put in our active note template
   get ActiveNoteTemplate() {
+    //FIXME represent chosen color on template
+    // when saving a hex code you will have to interpolate it into your string using a style attribute.
     return `
-    <div class="col-7 m-auto bg-info text-light rounded border border-${this.color}">
+    <div class="col-7 m-auto bg-info text-light rounded border border-${this.noteColor}">
     <h1>${this.title}</h1>
     <div class="mb-3 d-flex justify-content-between">
     </div>
     <h3>${this.date}</h3>
     <h3>${this.time}</h3>
+    <h3>${this.updatedTime}</h3>
     <textarea name="body" id="body" for="body" onblur="app.notesController.updateNote('${this.id}')">${this.body}</textarea>
   </div>
   <div>

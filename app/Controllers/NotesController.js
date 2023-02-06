@@ -12,6 +12,11 @@ function _drawNotes() {
   let template = ''
   notes.forEach(note => template += note.NoteTemplate)
   setHTML('notes', template)
+  setHTML('noteCount', notes.length)
+  console.log('noteCount', notes.length);
+
+  // TODO look at docs for arrays \...there is a property that tells you how many things are in it
+  // FIXME also get count of notes and draw to somewhere else on the html
   // console.log(template);
 }
 

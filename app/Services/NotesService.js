@@ -8,7 +8,9 @@ class NotesService {
   updateNote(updatedBody) {
     let activeNote = appState.activeNote
     activeNote.body = updatedBody
-    saveState('note', appState.notes)
+    // activeNote.body = 
+    // TODO change the the updated time...refer to the line above
+    saveState('notes', appState.notes)
     console.log(appState.notes);
     appState.emit('activeNote')
   }
@@ -28,7 +30,7 @@ class NotesService {
     appState.notes.push(newNote)
     console.log('Notes State: ', appState.notes)
     saveState('notes', appState.notes)
-    appState.emit('note')
+    appState.emit('notes')
   }
 
   deletenote(noteId) {
