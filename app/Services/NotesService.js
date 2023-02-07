@@ -9,6 +9,7 @@ class NotesService {
     let activeNote = appState.activeNote
     activeNote.body = updatedBody
     activeNote.updatedTime = new Date().toLocaleTimeString()
+    // activeNote.noteColor = 
     // TODO change the the updated time...refer to the line above
     saveState('notes', appState.notes)
     console.log(appState.notes);

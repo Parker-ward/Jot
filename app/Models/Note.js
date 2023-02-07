@@ -7,8 +7,8 @@ export class Note {
     this.title = data.title
     this.body = data.body || ''
     this.noteColor = data.noteColor // ?
-    // FIXME need to include an updated timestamp as well
-    // FIXME if you keep the timestamps as just Date, you can format them later.
+    // FIXME need to include an updated timestamp as well DONE!!! BOOM!
+    // FIXME if you keep the timestamps as just Date, you can format them later.DONE!!!! BOOM!!
     this.date = data.date || new Date().toLocaleDateString('en-Us')
     this.time = data.time || new Date().toLocaleTimeString()
     this.updatedTime = data.updatedTime || new Date().toLocaleTimeString()
@@ -28,7 +28,7 @@ export class Note {
     //FIXME represent chosen color on template
     // when saving a hex code you will have to interpolate it into your string using a style attribute.
     return `
-    <div class="col-7 m-auto bg-info text-light rounded border border-${this.noteColor}">
+    <div class="col-7 m-auto bg-info text-light rounded border border-width-2rem ${this.noteColor}">
     <h1>${this.title}</h1>
     <div class="mb-3 d-flex justify-content-between">
     </div>
