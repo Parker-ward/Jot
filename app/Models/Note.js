@@ -11,7 +11,7 @@ export class Note {
     // FIXME if you keep the timestamps as just Date, you can format them later.
     this.date = data.date || new Date().toLocaleDateString('en-Us')
     this.time = data.time || new Date().toLocaleTimeString()
-    this.updatedTime = data.updatedTime || Date.now()
+    this.updatedTime = data.updatedTime || new Date().toLocaleTimeString()
   }
 
   get NoteTemplate() {
