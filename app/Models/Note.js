@@ -28,8 +28,8 @@ export class Note {
     //FIXME represent chosen color on template
     // when saving a hex code you will have to interpolate it into your string using a style attribute.
     return `
-    <div class="col-7 m-auto bg-info text-light rounded border border-width-2rem ${this.noteColor}">
-    <h1>${this.title}</h1>
+    <div  class="col-7 m-auto bg-info text-light rounded border border-width-2rem ${this.noteColor}">
+    <h1 style="color:${this.noteColor}" >${this.title}</h1>
     <div class="mb-3 d-flex justify-content-between">
     </div>
     <h3>${this.date}</h3>
