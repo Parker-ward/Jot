@@ -8,7 +8,7 @@ class NotesService {
   updateNote(updatedBody) {
     let activeNote = appState.activeNote
     activeNote.body = updatedBody
-    // activeNote.updatedTime =
+    activeNote.updatedTime = new Date().toLocaleTimeString()
     // TODO change the the updated time...refer to the line above
     saveState('notes', appState.notes)
     console.log(appState.notes);
